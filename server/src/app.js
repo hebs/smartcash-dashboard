@@ -1,4 +1,3 @@
-console.log('hello')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -9,10 +8,11 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
   res.send({
-    message: 'look out world!'
+    message: `Your account has been created.`
   })
 })
 
-app.listen(process.env.PORT || 8081)
+app.listen(process.env.PORT || 8082)
+console.log('Express server running on port 8082!')
